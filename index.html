@@ -21,9 +21,18 @@
   <br>
   <hr>
   <form id="button-form">
+<!-- 
+      <label>True 
+          <input type="radio" name="button" value="true" />
+       </label> 
+       <label>False
+          <input type="radio" name="button" value="false" />
+       </label>
+       <button id="submit">Submit</button> -->
 
-    <button id="ansFalse" value="False">False</button>
-    <button id="ansTrue" value="True">True</button>
+
+    <button id="False" value="False">False</button>
+    <button id="True" value="True">True</button>
     <br>
     <hr>
 
@@ -35,9 +44,7 @@
   <script type="text/javascript">
     $("#ask").on("click", function () {
 
-
       var queryURL = "https://opentdb.com/api.php?amount=9&difficulty=medium&type=boolean";
-
 
       // Perfoming an AJAX GET request to our queryURL
       $.ajax({
@@ -54,27 +61,27 @@
 
           $("#questions").html(question);
 
-          // var user;
+          var user;
           var answer = response.results[0].correct_answer;
           var value;
 
-          // $("#button-form").on("click", function (user) {
-          //   event.preventDefault();
+          $("#button-form button").on("click", function() {
+            //console.log(this);
+            event.preventDefault()
             
-            var user = $("#button-form").on("click", function() {
-              return value;
-              console.log(value);
-            });
-            
-            // console.log(answer);
+            user = $(this).val();
+
+            // console.log(user);
+            console.log(user);
 
             if (answer === user) {
-              console.log("Correct!");
-            } else {
-              console.log("Incorrect! Loser!");
-            }
-
-
+                $("#answers").html("Correct!");
+              } else {
+                $("#answers").html("Incorrect! Loser!");
+              }
+            
+            });             
+          
           });
 
         });
