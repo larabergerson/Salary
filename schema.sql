@@ -15,13 +15,13 @@ CREATE TABLE `players` (
 
 CREATE TABLE  `playersData` (
 `id` INTEGER (11) AUTO_INCREMENT NOT NULL, 
-`players_id` INTEGER (11) AUTO_INCREMENT NOT NULL,
+`players_id` INTEGER (11) NOT NULL,
 `answers` VARCHAR (255) NOT NULL,
 
 PRIMARY KEY (`id`)
 );
 
-CREATE TABLE 'game'(
+CREATE TABLE `game`(
   `id` INTEGER (11) AUTO_INCREMENT NOT NULL, 
   `player1_id` INTEGER (11) NOT NULL,
   `player2_id`INTEGER (11) NOT NULL,
@@ -34,6 +34,11 @@ CREATE TABLE 'game'(
 CREATE TABLE `moves`(
   `id` INTEGER (11) AUTO_INCREMENT NOT NULL,
   `game_id` INTEGER (11) NOT NULL,
+  `player_id` INTEGER (11) NOT NULL,
+  `row` VARCHAR (3) NOT NULL,
+  `coloumn` INTEGER (3) NOT NULL,
+  `mark` VARCHAR (2) NOT NULL,
 
+ 
   PRIMARY KEY (`id`)
 );

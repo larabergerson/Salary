@@ -10,15 +10,30 @@
 <body>
 
         <nav>
-                <div class="nav-wrapper">
-                  <a href="#" class="brand-logo">Logo</a>
-                  <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
+                <div class="nav-wrapper #ffffff white">
+                  <a href="#" class="brand-logo #000000 black-text">Tic-Tac-Know</a>
+                  <ul id="nav-mobile" class="right hide-on-med-and-down #ffffff white">
+                                   <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger #03a9f4 light-blue" href="#modal">Sign Up</a>
+
+  <!-- Modal Structure -->
+  <div id="modal" class="modal">
+      <div class="modal-content">
+          <div id="signup">
+              <input type="text" id="userName" placeholder="Enter Name" /> <br/>
+              <input type="email" id="userEmail" placeholder="Enter email" /> <br />
+              <input type="password" id="userPassword" placeholder="Enter password" /><br />
+
+              <button id="btnSignUp"></button>
+              <button id="btnLogOut" class="hide">Log Out</button>
+        
+
                   </ul>
                 </div>
               </nav>
+
+
+        
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
