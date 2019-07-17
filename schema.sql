@@ -12,3 +12,28 @@ CREATE TABLE `players` (
 
   PRIMARY KEY (`id`) 
 );
+
+CREATE TABLE  `playersData` (
+`id` INTEGER (11) AUTO_INCREMENT NOT NULL, 
+`players_id` INTEGER (11) AUTO_INCREMENT NOT NULL,
+`answers` VARCHAR (255) NOT NULL,
+
+PRIMARY KEY (`id`)
+);
+
+CREATE TABLE 'game'(
+  `id` INTEGER (11) AUTO_INCREMENT NOT NULL, 
+  `player1_id` INTEGER (11) NOT NULL,
+  `player2_id`INTEGER (11) NOT NULL,
+  `turn` VARCHAR (2) NOT NULL,
+  `winner_id`INTEGER (2),
+
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `moves`(
+  `id` INTEGER (11) AUTO_INCREMENT NOT NULL,
+  `game_id` INTEGER (11) NOT NULL,
+
+  PRIMARY KEY (`id`)
+);
