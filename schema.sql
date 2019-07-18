@@ -6,9 +6,8 @@ CREATE TABLE `players` (
   `id` INTEGER (11) AUTO_INCREMENT NOT NULL,
   `player_name` VARCHAR (255) NOT NULL,
   `player_email` VARCHAR (255) NOT NULL,
-  `wins` INTEGER (11) NOT NULL,
-  `losses` INTEGER (11) NOT NULL,
-  `draws` INTEGER (11) NOT NULL,
+  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+  
 
   PRIMARY KEY (`id`) 
 );
@@ -16,7 +15,9 @@ CREATE TABLE `players` (
 CREATE TABLE  `playersData` (
 `id` INTEGER (11) AUTO_INCREMENT NOT NULL, 
 `players_id` INTEGER (11) NOT NULL,
-`answers` VARCHAR (255) NOT NULL,
+`wins` INTEGER (11) NOT NULL,
+`losses` INTEGER (11) NOT NULL,
+`draws` INTEGER (11) NOT NULL,
 
 PRIMARY KEY (`id`)
 );

@@ -6,16 +6,16 @@ module.exports = function(app) {
     db.players.findAll({}).then(function(dbPlayers) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        player: dbPlayers
       });
     });
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
+  app.get("/player/:id", function(req, res) {
+    db.Player.findOne({ where: { id: req.params.id } }).then(function(dbPlayers) {
+      res.render("player", {
+        player: dbPlayers
       });
     });
   });

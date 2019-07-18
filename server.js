@@ -3,20 +3,21 @@ var express = require("express");
 
 // set up express app
 var app = express();
-var PORT = preocess.env.PORT || 8080;
+var PORT = process.env.PORT || 8080;
 
 // set up express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// static directory to be served?
+// static directory:
 
-
+app.use(express.static("public"));
 // routes:
 
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
-X
-// server to begin listining 
+// server to begin listining: 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
