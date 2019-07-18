@@ -6,6 +6,7 @@ CREATE TABLE `players` (
   `id` INTEGER (11) AUTO_INCREMENT NOT NULL,
   `player_name` VARCHAR (255) NOT NULL,
   `player_email` VARCHAR (255) NOT NULL,
+  `player_password` VARCHAR (6) NOT NULL,
   `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
   
 
