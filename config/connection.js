@@ -1,13 +1,16 @@
 
 // Require mysql
 var mysql = require("mysql");
+require('dotenv').config();
+​
 
+const pw = require('./pw');
 // Set up our connection information
 var connection = mysql.createConnection({
   port: 3306,
   host: "localhost",
   user: "root",
-  password: "B00tc@mp#1",
+  password: pw.password,
   database: "playerDB"
 });
 

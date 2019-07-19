@@ -4,10 +4,10 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "mysql": "^2.17.1",
-    "sequelize": "^5.10.1"
+    "mysql": "^2.17.1"
   },
   "devDependencies": {},
   "scripts": {
@@ -23,5 +23,5 @@
   "bugs": {
     "url": "https://github.com/larabergerson/Salary/issues"
   },
-  "homepage": "https://github.com/larabergerson/Salary#readme"
+  "homepage": "https://github.com/larabergerson/Salary"
 }
