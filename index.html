@@ -16,37 +16,10 @@
                   <ul id="nav-mobile" class="right hide-on-med-and-down #ffffff white">               
               </nav>
              <div class="center-align">   
-              <a class="waves-effect waves-light btn-large" id="startGame">Play</a>
-              <a class="waves-effect waves-light btn-large" id="scoreCard">Scores</a>  
+              <a class="waves-effect waves-light btn-large" id="startGame" href="/play">Play</a>
+              <a class="waves-effect waves-light btn-large" id="scoreCard" href="/scores">Scores</a>  
             </div>
-            <!-- Launch Trivia  -->
-                <!-- <button id="ask">Ask</button>
-                <br>
-                <hr>
-                <div id="questions"></div>
-                <br>
-                <hr>
-                <form id="button-form"> -->
-              <!-- 
-                    <label>True 
-                        <input type="radio" name="button" value="true" />
-                     </label> 
-                     <label>False
-                        <input type="radio" name="button" value="false" />
-                     </label>
-                     <button id="submit">Submit</button> -->
-              
-             
-                  <!-- <button id="False" value="False">False</button>
-                  <button id="True" value="True">True</button>
-                  <br>
-                  <hr>
-              
-                </form> -->
-              
-                <!-- <div id="answers">
-                </div> -->
-              
+<!--               
                 <script type="text/javascript">
                   $("#startGame").on("click", function (){
                     console.log("working!")
@@ -60,46 +33,10 @@
 
                   $("#scoreCard").on("click", function (){
                     console.log("cool")
+                    window.redirect('/scoreboard')
                   });
 
-
-
-
-                  // $("#ask").on("click", function () {
-                  //   var queryURL = "https://opentdb.com/api.php?amount=10&difficulty=medium&type=boolean";
-                  //   // Perfoming an AJAX GET request to our queryURL
-                  //   $.ajax({
-                  //       url: queryURL,
-                  //       method: "GET"
-                  //     })
-                  //     // After the data from the AJAX request comes back
-                  //     .then(function (response) {
-                  //       console.log(response.results[0].question);
-                  //       console.log(response.results[0].correct_answer);
-                  //       var question = response.results[0].question;
-                  //       $("#questions").html(question);
-                  //       var user;
-                  //       var answer = response.results[0].correct_answer;
-                  //       var value;
-                  //       $("#button-form button").on("click", function() {
-                  //         //console.log(this);
-                  //         event.preventDefault()
-                          
-                  //         user = $(this).val();
-                  //         // console.log(user);
-                  //         console.log(user);
-                  //         if (answer === user) {
-                  //             $("#answers").html("Correct!");
-                  //           } else {
-                  //             $("#answers").html("Incorrect! Loser!");
-                  //           }
-                          
-                  //         });             
-                        
-                  //       });
-                  //     });
-                  // });
-                </script>
+                </script> -->
               </body>
               
               </html> 
