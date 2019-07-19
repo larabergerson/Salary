@@ -70,6 +70,7 @@
             var question = gameData[whichQuestion].question;
             $("#questions").html(question);
           }
+        });
 
           $("#button-form button").on("click", function (event) {
             event.preventDefault()
@@ -97,7 +98,8 @@
                 $.ajax({
                   method: POST,
                   url: `/api/c/${correct}/i/${incorrect}`
-                }).then( //stuff
+                }).then( 
+                  console.log("response submitted")
                 )
               } else {
                 displayQuestion(counter)
@@ -105,6 +107,7 @@
             };
 
           });
+          
   </script>
 </body>
 
