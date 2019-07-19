@@ -55,6 +55,7 @@
         .then(function (response) {
 
           console.log(response.results[0].question);
+          console.log(response.results[0].question);
           console.log(response.results[0].correct_answer);
 
           var question = response.results[0].question;
@@ -64,9 +65,15 @@
           var user;
           var answer = response.results[0].correct_answer;
           var value;
+          var correct = 0;
+          var incorrect = 0;
+          var counter = 0;
+
 
           $("#button-form button").on("click", function() {
             //console.log(this);
+            setInterval();
+            display.counter
             event.preventDefault()
             
             user = $(this).val();
@@ -76,8 +83,10 @@
 
             if (answer === user) {
                 $("#answers").html("Correct!");
+                correct++;
               } else {
                 $("#answers").html("Incorrect! Loser!");
+                incorrect++;
               }
             
             });             
