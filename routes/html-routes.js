@@ -13,13 +13,21 @@ module.exports = function(app) {
   });
 
   
-  app.get("/game", function (req, res) {
+  app.get("/play", function (req, res) {
     fs.readFile(__dirname + "/game.html", function(err, data) {
       if (err) throw err;
       res.writeHead(200, { "Content-Type": "text/html" });
       res.end(data);
     });
   });
+
+  app.get('/scores', function (req, res) {
+    fs.readFile(__dirname + "/scoreboard.html", function(err, data) {
+      if (err) throw err;
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.end(data);
+    });
+  })
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
