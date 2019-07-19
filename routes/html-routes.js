@@ -1,23 +1,24 @@
 var db = require("../models");
+var http = require("http");
+var fs = require("fs");
 
 module.exports = function(app) {
   // Load index page
-  app.get("/", function(req, res) {
-    // db.players.findAll({}).then(function(dbPlayers) {
-    //   res.render("index", {
-    //     msg: "Welcome!",
-    //     player: dbPlayers
-    //   });
-    // });
+  app.get("/", function (req, res) {
+    fs.readFile(__dirname + "/index.html", function(err, data) {
+      if (err) throw err;
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.end(data);
+    });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/player/:id", function(req, res) {
-    // db.Player.findOne({ where: { id: req.params.id } }).then(function(dbPlayers) {
-    //   res.render("player", {
-    //     player: dbPlayers
-    //   });
-    // });
+  
+  app.get("/game", function (req, res) {
+    fs.readFile(__dirname + "/game.html", function(err, data) {
+      if (err) throw err;
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.end(data);
+    });
   });
 
   // Render 404 page for any unmatched routes
