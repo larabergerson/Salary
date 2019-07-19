@@ -10,8 +10,8 @@ var connection = require("../config/connection.js");
 // =============================================================
 module.exports = function(app) {
   // Get all players
-  app.get("/api/start_game", function(req, res) {
-    var dbQuery = "SELECT * FROM players";
+  app.get("/api/all", function(req, res) {
+    var dbQuery = "SELECT * FROM scoreboard";
 
     connection.query(dbQuery, function(err, result) {
       if (err) throw err;
@@ -24,9 +24,9 @@ module.exports = function(app) {
     console.log("Player Data: ");
     console.log(req.body);
 
-    var dbQuery = "INSERT INTO players (player_name, player_email, wins, losses, draws) VALUES (?,?,?,?,?)";
+    var dbQuery = "INSERT INTO scorecard (corrects, incorrecrs) VALUES (?,?)";
 
-    connection.query(dbQuery, [req.body.player_name, req.body.player_email, req.body.wins, req.body.losses, req.body.draws], function(err, result) {
+    connection.query(dbQuery, [req.body.corrects, req.body.incorrects], function(err, result) {
       if (err) throw err;
       console.log("Player Saved!");
       res.end();
