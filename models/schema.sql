@@ -2,13 +2,13 @@ DROP DATABASE IF EXISTS playerDB;
 CREATE DATABASE playerDB;
 USE playerDB;
 
-<<<<<<< HEAD
-CREATE TABLE  scoreboard (
-id INTEGER (10) AUTO_INCREMENT NOT NULL, 
-players_name VARCHAR  (11) NOT NULL,
-correct_answers INTEGER (11) NOT NULL,
-incorrect_answers INTEGER (11) NOT NULL
-);
+-- CREATE TABLE  `scoreboard` (
+-- `id` INTEGER (10) AUTO_INCREMENT NOT NULL, 
+-- `players_name` VARCHAR  (11) NOT NULL,
+-- `correct_answers` INTEGER (11) NOT NULL,
+-- `incorrect_answers` INTEGER (11) NOT NULL, 
+-- PRIMARY KEY (`id`)
+-- );
 
 -- CREATE TABLE `players` (
 --   `id` INTEGER (11) AUTO_INCREMENT NOT NULL,
@@ -52,7 +52,6 @@ incorrect_answers INTEGER (11) NOT NULL
  
 --   PRIMARY KEY (`id`)
 -- );
-=======
 CREATE TABLE `scoreboard` (
   `id` INTEGER (11) AUTO_INCREMENT NOT NULL,
   `corrects` INTEGER (200) NOT NULL,
@@ -60,4 +59,3 @@ CREATE TABLE `scoreboard` (
  
  PRIMARY KEY (`id`)
 );
->>>>>>> master
