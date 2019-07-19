@@ -1,4 +1,3 @@
-var db = require("../models");
 var http = require("http");
 var fs = require("fs");
 
