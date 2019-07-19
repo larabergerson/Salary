@@ -10,7 +10,7 @@ var connection = require("../config/connection.js");
 // =============================================================
 module.exports = function(app) {
   // Get all players
-  app.get("/api/all", function(req, res) {
+  app.get("/api/start_game", function(req, res) {
     var dbQuery = "SELECT * FROM players";
 
     connection.query(dbQuery, function(err, result) {
