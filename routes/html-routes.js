@@ -1,10 +1,15 @@
 var http = require("http");
+var express = require("express");
 var fs = require("fs");
+var app = require("express");
+// var path = require("path");
 
 module.exports = function(app) {
   // Load index page
   app.get("/", function (req, res) {
-    fs.readFile(__dirname + "/index.html", function(err, data) {
+    fs.readFile(__dirname + "/routes/index", function
+       
+    (err, data) {
       if (err) throw err;
       res.writeHead(200, { "Content-Type": "text/html" });
       res.end(data);
@@ -13,7 +18,7 @@ module.exports = function(app) {
 
   
   app.get("/play", function (req, res) {
-    fs.readFile(__dirname + "/game.html", function(err, data) {
+    fs.readFile(__dirname, "/routes/game", function(err, data) {
       if (err) throw err;
       res.writeHead(200, { "Content-Type": "text/html" });
       res.end(data);
@@ -21,7 +26,7 @@ module.exports = function(app) {
   });
 
   app.get('/scores', function (req, res) {
-    fs.readFile(__dirname + "/scoreboard.html", function(err, data) {
+    fs.readFile(__dirname + "/routes/scoreboard.html", function(err, data) {
       if (err) throw err;
       res.writeHead(200, { "Content-Type": "text/html" });
       res.end(data);

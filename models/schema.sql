@@ -53,9 +53,9 @@ USE playerDB;
 --   PRIMARY KEY (`id`)
 -- );
 CREATE TABLE `scoreboard` (
-  `id` INTEGER (11) AUTO_INCREMENT NOT NULL,
-  `corrects` INTEGER (200) NOT NULL,
-  `incorrects` INTEGER (200) NOT NULL,
+  `id` INTEGER (10) AUTO_INCREMENT NOT NULL,
+  `corrects` INTEGER (10) NOT NULL,
+  `incorrects` INTEGER (10) NOT NULL,
  
  PRIMARY KEY (`id`)
 );

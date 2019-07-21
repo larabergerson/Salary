@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Trivia Main Page</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
@@ -14,6 +16,16 @@
 
 <body>
 
+    <nav>
+        <div class="nav-wrapper #ffffff white center-align">
+          <a href="#" class="brand-logo #000000 black-text center">Trivia Go</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down #ffffff white center">
+      </nav>
+      <div class="center-align">
+        <a class="waves-effect waves-light btn-large" id="startGame" href="/play">Play</a>
+        <a class="waves-effect waves-light btn-large" id="scoreCard" href="/scores">Scores</a>
+      </div>
+    
   <button id="ask">Ask</button>
   <br>
   <hr>
@@ -44,7 +56,7 @@
   <script type="text/javascript">
     $("#ask").on("click", function () {
 
-          var queryURL = "https://opentdb.com/api.php?amount=10&difficulty=medium&type=boolean";
+          var queryURL = "https://opentdb.com/api.php?amount=9&difficulty=medium&type=boolean";
 
           var correct;
           var incorrect;
@@ -62,42 +74,46 @@
               incorrect = 0;
               counter = 0;
               gameData = response.results;
+              
 
               displayQuestion(counter);
             });
-
-          function displayQuestion(whichQuestion) {
-            var question = gameData[whichQuestion].question;
-            $("#questions").html(question);
+            //switched these two counters
+          function displayQuestion(counter) {
+            console.log(gameData[counter].question);
+            var question = gameData[counter].question;
+            $("#questions").html(counter + 1+". " + question);
           }
-        });
+        
 
           $("#button-form button").on("click", function (event) {
             event.preventDefault()
 
             user = $(this).val();
-
-            console.log(user);
-
-            if (answer === gameData[counter].correct_answer) {
+            // console.log(gameData[counter].correct_answer);  
+            if (user === gameData[counter].correct_answer) {
               setInterval(function (correct) {
                 $("#answers").html("Correct!");
                 correct++;
-
-                console.log(correct);
-              }, 3000)
+                
+              }, 3000);
+              counter++;
+              displayQuestion(counter);
             } else {
               setInterval(function (incorrect) {
-                $("#answers").html("Incorrect! Loser!");
+                $("#answers").html("Incorrect!");
                 incorrect++;
-              }, 3000);
 
+                // console.log(incorrect);
+              }, 3000);
               counter++;
+              displayQuestion(counter);
 
               if (counter > 9) {
                 $.ajax({
                   method: POST,
-                  url: `/api/c/${correct}/i/${incorrect}`
+                  url: "/api/c/" + correct + "/i/" + incorrect
+                  // url: `/api/c/${correct}/i/${incorrect}`
                 }).then( 
                   console.log("response submitted")
                 )
@@ -107,7 +123,7 @@
             };
 
           });
-          
+          });
   </script>
 </body>
 

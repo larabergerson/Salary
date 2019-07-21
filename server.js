@@ -19,8 +19,8 @@ app.set('view engine', 'handlebars');
 
 
 require("./routes/html-routes.js")(app);
-
 require("./routes/api-routes.js")(app);
+console.log(__dirname);
 console.log("Blah blah!");
 // server to begin listining: 
 
