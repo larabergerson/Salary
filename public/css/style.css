@@ -3,6 +3,9 @@
     font-size: 50px; 
 }
 
+.card-content {
+    margin: auto;
+}
 #particles-js {
     background: cornflowerblue;
   }
