@@ -1,4 +1,5 @@
 // starting point
+
 console.log("Hey you loaded!");
 var express = require("express");
 var exphbs = require("express-handlebars");
@@ -27,4 +28,5 @@ console.log("Blah blah!");
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
-  });
+});
+
