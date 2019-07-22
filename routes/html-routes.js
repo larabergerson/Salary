@@ -1,5 +1,6 @@
 var http = require("http");
 var fs = require("fs");
+// var particlesJS = require("particles.js");
 
 module.exports = function(app) {
   // Load index page
@@ -27,6 +28,12 @@ module.exports = function(app) {
       res.end(data);
     });
   })
+
+  // module.exports = function (particlesJS) {
+  //   particlesJS.load('particles-js', 'assets/particles.json', function () {
+  //     console.log('callback - particles.js config loaded');
+  //   });
+  // }
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

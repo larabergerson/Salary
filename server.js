@@ -2,7 +2,7 @@
 console.log("Hey you loaded!");
 var express = require("express");
 var exphbs = require("express-handlebars");
-
+// var particlesJS = require("particles.js");
 // set up express app
 var app = express();
 var PORT = process.env.PORT || 8080;
